@@ -1,0 +1,520 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling1\cocoaplatform1{\fonttbl\f0\fnil\fcharset0 .SFUI-Regular;}
+{\colortbl;\red255\green255\blue255;\red17\green17\blue17;}
+{\*\expandedcolortbl;;\cssrgb\c6700\c6700\c6700;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl250\slmult1\rtlpar\qr\partightenfactor0
+
+\f0\fs34 \cf2 \uc0\u1492 \u1488 \u1514 \u1512  \u1492 \u1512 \u1488 \u1513 \u1493 \u1503  \
+\
+```html\
+<!DOCTYPE html>\
+<html lang="he" dir="rtl">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>\uc0\u1492 \u1508 \u1497 \u1504 \u1492  \u1513 \u1500  \u1512 \u1493 \u1504 \u1503  - 30 \u1513 \u1504 \u1492  \u1513 \u1500  \u1513 \u1497 \u1512 \u1493 \u1514  \u1502 \u1506 \u1493 \u1500 \u1492  | \u1492 \u1494 \u1502 \u1504 \u1493 \u1514  \u1488 \u1493 \u1504 \u1500 \u1497 \u1497 \u1503 </title>\
+    \
+    <meta name="description" content="\uc0\u1492 \u1508 \u1497 \u1504 \u1492  \u1513 \u1500  \u1512 \u1493 \u1504 \u1503  - 30 \u1513 \u1504 \u1492  \u1513 \u1500  \u1513 \u1497 \u1512 \u1493 \u1514  \u1502 \u1506 \u1493 \u1500 \u1492  \u1489 \u1512 \u1506 \u1504 \u1504 \u1492 ! \u1492 \u1494 \u1502 \u1504 \u1493 \u1514  \u1488 \u1493 \u1504 \u1500 \u1497 \u1497 \u1503  \u1502 \u1514 \u1511 \u1491 \u1502 \u1493 \u1514 , \u1502 \u1513 \u1500 \u1493 \u1495 \u1497 \u1501  \u1502 \u1492 \u1497 \u1512 \u1497 \u1501  \u1514 \u1493 \u1498  15 \u1491 \u1511 \u1493 \u1514 . \u1511 \u1500 \u1488 \u1493 \u1494 \u1504 \u1512  2, \u1512 \u1506 \u1504 \u1504 \u1492 . \u1496 \u1500 : 050-821-1254">\
+    \
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">\
+    \
+    <script src="https://cdn.tailwindcss.com"></script>\
+    \
+    <style>\
+        * \{ font-family: 'Assistant', sans-serif; \}\
+        \
+        .floating-whatsapp \{\
+            position: fixed;\
+            bottom: 20px;\
+            left: 20px;\
+            z-index: 1000;\
+            animation: bounce 2s infinite;\
+        \}\
+        \
+        .floating-cart \{\
+            position: fixed;\
+            bottom: 100px;\
+            left: 20px;\
+            z-index: 1000;\
+            animation: pulse 2s infinite;\
+        \}\
+        \
+        @keyframes bounce \{\
+            0%, 20%, 53%, 80%, 100% \{ transform: translateY(0); \}\
+            40%, 43% \{ transform: translateY(-10px); \}\
+            70% \{ transform: translateY(-5px); \}\
+        \}\
+        \
+        @keyframes pulse \{\
+            0%, 100% \{ transform: scale(1); \}\
+            50% \{ transform: scale(1.05); \}\
+        \}\
+        \
+        .product-card \{\
+            transition: all 0.3s ease;\
+            border: 2px solid transparent;\
+        \}\
+        \
+        .product-card:hover \{\
+            transform: translateY(-8px);\
+            box-shadow: 0 25px 50px rgba(220, 38, 38, 0.2);\
+            border-color: #dc2626;\
+        \}\
+        \
+        .cart-sidebar \{\
+            position: fixed;\
+            top: 0;\
+            right: -400px;\
+            width: 400px;\
+            height: 100vh;\
+            background: white;\
+            box-shadow: -10px 0 30px rgba(0,0,0,0.3);\
+            transition: right 0.3s ease;\
+            z-index: 1000;\
+            overflow-y: auto;\
+        \}\
+        \
+        .cart-sidebar.open \{ right: 0; \}\
+        \
+        .cart-overlay \{\
+            position: fixed;\
+            top: 0;\
+            left: 0;\
+            width: 100vw;\
+            height: 100vh;\
+            background: rgba(0,0,0,0.5);\
+            z-index: 999;\
+            opacity: 0;\
+            visibility: hidden;\
+            transition: all 0.3s ease;\
+        \}\
+        \
+        .cart-overlay.open \{\
+            opacity: 1;\
+            visibility: visible;\
+        \}\
+        \
+        @media (max-width: 768px) \{\
+            .cart-sidebar \{\
+                width: 100vw;\
+                right: -100vw;\
+            \}\
+        \}\
+    </style>\
+</head>\
+<body class="bg-gray-50">\
+\
+    <!-- WhatsApp Button -->\
+    <a href="https://wa.me/972508211254?text=\uc0\u1513 \u1500 \u1493 \u1501 %20\u1512 \u1493 \u1504 \u1503 ,%20\u1488 \u1504 \u1497 %20\u1512 \u1493 \u1510 \u1492 %20\u1500 \u1489 \u1510 \u1506 %20\u1492 \u1494 \u1502 \u1504 \u1492 " \
+       class="floating-whatsapp bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-colors" \
+       target="_blank">\
+        \uc0\u55357 \u56561 \
+    </a>\
+\
+    <!-- Cart Button -->\
+    <button onclick="toggleCart()" class="floating-cart bg-red-600 text-white p-4 rounded-full shadow-2xl hover:bg-red-700 transition-colors relative">\
+        \uc0\u55357 \u57042 \
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-yellow-400 text-red-600 text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center" style="display: none;">0</span>\
+    </button>\
+\
+    <!-- Cart Overlay -->\
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>\
+\
+    <!-- Cart Sidebar -->\
+    <div id="cart-sidebar" class="cart-sidebar">\
+        <div class="p-6 border-b border-gray-200 bg-red-600 text-white">\
+            <div class="flex justify-between items-center">\
+                <h3 class="text-2xl font-bold">\uc0\u55357 \u57042  \u1506 \u1490 \u1500 \u1514  \u1492 \u1511 \u1504 \u1497 \u1493 \u1514 </h3>\
+                <button onclick="toggleCart()" class="text-white text-3xl">\'d7</button>\
+            </div>\
+            <div class="mt-4 bg-orange-500 p-3 rounded-lg">\
+                \uc0\u9889  \u1502 \u1513 \u1500 \u1493 \u1495  \u1502 \u1492 \u1497 \u1512  \u1514 \u1493 \u1498  15 \u1491 \u1511 \u1493 \u1514 !\
+            </div>\
+        </div>\
+        \
+        <div class="bg-purple-100 p-4">\
+            <h4 class="font-bold text-lg mb-2">\uc0\u55356 \u57225  \u1492 \u1510 \u1506 \u1492  \u1502 \u1497 \u1493 \u1495 \u1491 \u1514 !</h4>\
+            <p class="text-sm">\uc0\u1502 \u1513 \u1500 \u1493 \u1495  \u1495 \u1497 \u1504 \u1501  \u1500 \u1492 \u1494 \u1502 \u1504 \u1493 \u1514  \u1502 \u1506 \u1500  \u8362 80</p>\
+        </div>\
+        \
+        <div id="cart-items" class="p-6 flex-1">\
+            <div class="text-center text-gray-500 py-8">\
+                <div class="text-6xl mb-4">\uc0\u55357 \u57042 </div>\
+                <p class="text-lg">\uc0\u1492 \u1506 \u1490 \u1500 \u1492  \u1513 \u1500 \u1498  \u1512 \u1497 \u1511 \u1492 </p>\
+                <p class="text-sm">\uc0\u1492 \u1493 \u1505 \u1507  \u1502 \u1493 \u1510 \u1512 \u1497 \u1501  \u1499 \u1491 \u1497  \u1500 \u1492 \u1514 \u1495 \u1497 \u1500 </p>\
+            </div>\
+        </div>\
+        \
+        <div id="cart-footer" class="p-6 border-t border-gray-200 bg-gray-50" style="display: none;">\
+            <div class="space-y-4">\
+                <div class="bg-white p-4 rounded-lg">\
+                    <h4 class="font-bold mb-3">\uc0\u55357 \u56986  \u1488 \u1508 \u1513 \u1512 \u1493 \u1497 \u1493 \u1514  \u1502 \u1513 \u1500 \u1493 \u1495 </h4>\
+                    <div class="space-y-2">\
+                        <label class="flex items-center">\
+                            <input type="radio" name="delivery" value="express" checked>\
+                            <span class="mr-2">\uc0\u1502 \u1513 \u1500 \u1493 \u1495  \u1502 \u1492 \u1497 \u1512  (15 \u1491 \u1511 ') - \u8362 10</span>\
+                        </label>\
+                        <label class="flex items-center">\
+                            <input type="radio" name="delivery" value="standard">\
+                            <span class="mr-2">\uc0\u1502 \u1513 \u1500 \u1493 \u1495  \u1512 \u1490 \u1497 \u1500  (30 \u1491 \u1511 ') - \u8362 5</span>\
+                        </label>\
+                        <label class="flex items-center">\
+                            <input type="radio" name="delivery" value="pickup">\
+                            <span class="mr-2">\uc0\u1488 \u1497 \u1505 \u1493 \u1507  \u1506 \u1510 \u1502 \u1497  - \u1495 \u1497 \u1504 \u1501 </span>\
+                        </label>\
+                    </div>\
+                </div>\
+                \
+                <div class="bg-white p-4 rounded-lg space-y-2">\
+                    <div class="flex justify-between">\
+                        <span>\uc0\u1505 \u1499 \u1493 \u1501  \u1502 \u1493 \u1510 \u1512 \u1497 \u1501 :</span>\
+                        <span id="subtotal">\uc0\u8362 0</span>\
+                    </div>\
+                    <div class="flex justify-between">\
+                        <span>\uc0\u1502 \u1513 \u1500 \u1493 \u1495 :</span>\
+                        <span id="delivery-cost">\uc0\u8362 10</span>\
+                    </div>\
+                    <hr>\
+                    <div class="flex justify-between text-xl font-bold text-red-600">\
+                        <span>\uc0\u1505 \u1492 "\u1499 :</span>\
+                        <span id="cart-total">\uc0\u8362 0</span>\
+                    </div>\
+                </div>\
+                \
+                <button onclick="checkout()" class="w-full bg-red-600 text-white py-4 px-6 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors">\
+                    \uc0\u55357 \u56499  \u1492 \u1502 \u1513 \u1498  \u1500 \u1492 \u1494 \u1502 \u1504 \u1492 \
+                </button>\
+                \
+                <button onclick="clearCart()" class="w-full bg-gray-300 text-gray-700 py-2 px-6 rounded-lg font-medium hover:bg-gray-400 transition-colors">\
+                    \uc0\u55357 \u56785 \u65039  \u1512 \u1493 \u1511 \u1503  \u1506 \u1490 \u1500 \u1492 \
+                </button>\
+            </div>\
+        </div>\
+    </div>\
+\
+    <!-- Header -->\
+    <header class="bg-white shadow-lg sticky top-0 z-30">\
+        <div class="container mx-auto px-4 py-4">\
+            <div class="flex justify-between items-center">\
+                <div class="flex items-center space-x-4 space-x-reverse">\
+                    <div class="text-4xl">\uc0\u55356 \u57322 </div>\
+                    <div>\
+                        <h1 class="text-3xl font-bold text-red-600">\uc0\u1492 \u1508 \u1497 \u1504 \u1492  \u1513 \u1500  \u1512 \u1493 \u1504 \u1503 </h1>\
+                        <p class="text-sm text-gray-600">30 \uc0\u1513 \u1504 \u1492  \u1513 \u1500  \u1513 \u1497 \u1512 \u1493 \u1514  \u1502 \u1506 \u1493 \u1500 \u1492  \'95 050-821-1254</p>\
+                    </div>\
+                </div>\
+                \
+                <div class="flex items-center space-x-4 space-x-reverse">\
+                    <a href="https://waze.com/ul?q=\uc0\u1511 \u1500 \u1488 \u1493 \u1494 \u1504 \u1512  2 \u1512 \u1506 \u1504 \u1504 \u1492 &navigate=yes" target="_blank" \
+                       class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">\
+                        \uc0\u55357 \u56826 \u65039  Waze\
+                    </a>\
+                    <a href="https://www.google.com/maps/dir//\uc0\u1511 \u1500 \u1488 \u1493 \u1494 \u1504 \u1512 +2,+\u1512 \u1506 \u1504 \u1504 \u1492 " target="_blank" \
+                       class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">\
+                        \uc0\u55357 \u56826 \u65039  Maps\
+                    </a>\
+                </div>\
+            </div>\
+        </div>\
+    </header>\
+\
+    <!-- Hero Section -->\
+    <section class="py-20 bg-gradient-to-r from-red-600 to-orange-600 text-white">\
+        <div class="container mx-auto px-4 text-center">\
+            <h2 class="text-5xl font-bold mb-6">\uc0\u1489 \u1512 \u1493 \u1499 \u1497 \u1501  \u1492 \u1489 \u1488 \u1497 \u1501  \u1500 \u1508 \u1497 \u1504 \u1492  \u1513 \u1500  \u1512 \u1493 \u1504 \u1503 </h2>\
+            <p class="text-2xl mb-8">30 \uc0\u1513 \u1504 \u1492  \u1513 \u1500  \u1513 \u1497 \u1512 \u1493 \u1514  \u1502 \u1506 \u1493 \u1500 \u1492  \u1489 \u1512 \u1506 \u1504 \u1504 \u1492 !</p>\
+            <p class="text-lg mb-8">\uc0\u55357 \u56525  \u1511 \u1500 \u1488 \u1493 \u1494 \u1504 \u1512  2, \u1512 \u1506 \u1504 \u1504 \u1492  \'95 \u55357 \u56542  050-821-1254</p>\
+            \
+            <div class="grid md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">\
+                <div class="bg-white/20 p-6 rounded-lg">\
+                    <div class="text-4xl mb-4">\uc0\u55356 \u57215 </div>\
+                    <h3 class="font-bold">\uc0\u1495 \u1496 \u1497 \u1508 \u1497 \u1501 </h3>\
+                    <p class="text-sm">\uc0\u1502 \u1490 \u1493 \u1493 \u1503  \u1506 \u1504 \u1511 </p>\
+                </div>\
+                <div class="bg-white/20 p-6 rounded-lg">\
+                    <div class="text-4xl mb-4">\uc0\u55358 \u56676 </div>\
+                    <h3 class="font-bold">\uc0\u1502 \u1513 \u1511 \u1488 \u1493 \u1514 </h3>\
+                    <p class="text-sm">\uc0\u1511 \u1512 \u1497 \u1501  \u1493 \u1495 \u1512 \u1497 \u1508 \u1497 \u1501 </p>\
+                </div>\
+                <div class="bg-white/20 p-6 rounded-lg">\
+                    <div class="text-4xl mb-4">\uc0\u55356 \u57217 </div>\
+                    <h3 class="font-bold">\uc0\u1502 \u1488 \u1512 \u1494 \u1497 \u1501 </h3>\
+                    <p class="text-sm">\uc0\u1500 \u1499 \u1500  \u1488 \u1497 \u1512 \u1493 \u1506 </p>\
+                </div>\
+                <div class="bg-white/20 p-6 rounded-lg">\
+                    <div class="text-4xl mb-4">\uc0\u11088 </div>\
+                    <h3 class="font-bold">\uc0\u1488 \u1497 \u1499 \u1493 \u1514 </h3>\
+                    <p class="text-sm">30 \uc0\u1513 \u1504 \u1493 \u1514  \u1504 \u1497 \u1505 \u1497 \u1493 \u1503 </p>\
+                </div>\
+            </div>\
+            \
+            <div class="flex gap-4 justify-center">\
+                <button onclick="document.getElementById('products').scrollIntoView(\{behavior: 'smooth'\})" \
+                        class="bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors">\
+                    \uc0\u55357 \u57042  \u1492 \u1514 \u1495 \u1500  \u1500 \u1511 \u1504 \u1493 \u1514  \u1506 \u1499 \u1513 \u1497 \u1493 \
+                </button>\
+                <a href="tel:050-821-1254" \
+                   class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-red-600 transition-colors">\
+                    \uc0\u55357 \u56542  \u1492 \u1514 \u1511 \u1513 \u1512  \u1506 \u1499 \u1513 \u1497 \u1493 \
+                </a>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Products Section -->\
+    <section id="products" class="py-16 bg-white">\
+        <div class="container mx-auto px-4">\
+            <h2 class="text-4xl font-bold text-center mb-12">\uc0\u55357 \u57037 \u65039  \u1492 \u1502 \u1493 \u1510 \u1512 \u1497 \u1501  \u1513 \u1500 \u1504 \u1493 </h2>\
+            \
+            <!-- Categories -->\
+            <div class="flex gap-2 flex-wrap justify-center mb-8">\
+                <button onclick="filterByCategory('\uc0\u1492 \u1499 \u1500 ')" class="category-btn px-6 py-3 rounded-full font-medium bg-red-600 text-white">\
+                    \uc0\u55357 \u57037 \u65039  \u1492 \u1499 \u1500 \
+                </button>\
+                <button onclick="filterByCategory('\uc0\u1495 \u1496 \u1497 \u1508 \u1497 \u1501 ')" class="category-btn px-6 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200">\
+                    \uc0\u55356 \u57215  \u1495 \u1496 \u1497 \u1508 \u1497 \u1501 \
+                </button>\
+                <button onclick="filterByCategory('\uc0\u1513 \u1514 \u1497 \u1492  \u1502 \u1514 \u1493 \u1511 \u1492 ')" class="category-btn px-6 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200">\
+                    \uc0\u55358 \u56676  \u1513 \u1514 \u1497 \u1492  \u1502 \u1514 \u1493 \u1511 \u1492 \
+                </button>\
+                <button onclick="filterByCategory('\uc0\u1513 \u1514 \u1497 \u1492  \u1495 \u1512 \u1497 \u1508 \u1492 ')" class="category-btn px-6 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200">\
+                    \uc0\u55356 \u57210  \u1513 \u1514 \u1497 \u1492  \u1495 \u1512 \u1497 \u1508 \u1492 \
+                </button>\
+                <button onclick="filterByCategory('\uc0\u1505 \u1497 \u1490 \u1512 \u1497 \u1493 \u1514 ')" class="category-btn px-6 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200">\
+                    \uc0\u55357 \u57004  \u1505 \u1497 \u1490 \u1512 \u1497 \u1493 \u1514 \
+                </button>\
+                <button onclick="filterByCategory('\uc0\u1502 \u1488 \u1512 \u1494 \u1497 \u1501  \u1500 \u1495 \u1490  \u1493 \u1497 \u1502 \u1497  \u1492 \u1493 \u1500 \u1491 \u1514 ')" class="category-btn px-6 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200">\
+                    \uc0\u55356 \u57217  \u1502 \u1488 \u1512 \u1494 \u1497 \u1501 \
+                </button>\
+                <button onclick="filterByCategory('\uc0\u1489 \u1500 \u1493 \u1504 \u1497 \u1501  \u1493 \u1499 \u1493 ')" class="category-btn px-6 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200">\
+                    \uc0\u55356 \u57224  \u1489 \u1500 \u1493 \u1504 \u1497 \u1501 \
+                </button>\
+            </div>\
+            \
+            <!-- Products Grid -->\
+            <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">\
+                <!-- Products will be loaded here -->\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- About Section -->\
+    <section id="about" class="py-16 bg-gray-50">\
+        <div class="container mx-auto px-4">\
+            <div class="max-w-4xl mx-auto text-center">\
+                <h2 class="text-4xl font-bold mb-8">\uc0\u55356 \u57286  \u1488 \u1493 \u1491 \u1493 \u1514  \u1492 \u1508 \u1497 \u1504 \u1492  \u1513 \u1500  \u1512 \u1493 \u1504 \u1503 </h2>\
+                \
+                <div class="bg-white rounded-3xl p-8 shadow-lg">\
+                    <div class="text-6xl mb-6">\uc0\u55356 \u57322 </div>\
+                    <h3 class="text-3xl font-bold text-red-600 mb-6">30 \uc0\u1513 \u1504 \u1492  \u1513 \u1500  \u1502 \u1505 \u1493 \u1512 \u1514  \u1493 \u1488 \u1497 \u1499 \u1493 \u1514 </h3>\
+                    \
+                    <p class="text-xl leading-relaxed text-gray-700 mb-8">\
+                        \uc0\u1502 \u1494 \u1492  <strong class="text-red-600">30 \u1513 \u1504 \u1492 </strong>, \u1492 \u1508 \u1497 \u1504 \u1492  \u1513 \u1500  \u1512 \u1493 \u1504 \u1503  \u1502 \u1505 \u1508 \u1511 \u1514  \u1513 \u1497 \u1512 \u1493 \u1514  \u1502 \u1506 \u1493 \u1500 \u1492  \u1500 \u1514 \u1493 \u1513 \u1489 \u1497  \u1512 \u1506 \u1504 \u1504 \u1492  \u1493 \u1492 \u1505 \u1489 \u1497 \u1489 \u1492 . \
+                        \uc0\u1488 \u1504 \u1495 \u1504 \u1493  \u1502 \u1514 \u1502 \u1495 \u1497 \u1501  \u1489 \u1502 \u1514 \u1503  \u1513 \u1497 \u1512 \u1493 \u1514  \u1489 \u1512 \u1502 \u1492  \u1492 \u1490 \u1489 \u1493 \u1492 \u1492  \u1489 \u1497 \u1493 \u1514 \u1512  \u1506 \u1501  \u1502 \u1493 \u1510 \u1512 \u1497 \u1501  \u1488 \u1497 \u1499 \u1493 \u1514 \u1497 \u1497 \u1501  \u1489 \u1502 \u1495 \u1497 \u1512 \u1497 \u1501  \u1492 \u1493 \u1490 \u1504 \u1497 \u1501  \u1493 \u1492 \u1490 \u1497 \u1493 \u1504 \u1497 \u1497 \u1501 .\
+                    </p>\
+                    \
+                    <div class="grid md:grid-cols-2 gap-8">\
+                        <div class="bg-red-50 rounded-2xl p-6">\
+                            <h4 class="text-xl font-bold text-red-600 mb-4">\uc0\u55357 \u57037 \u65039  \u1492 \u1502 \u1493 \u1510 \u1512 \u1497 \u1501  \u1513 \u1500 \u1504 \u1493 </h4>\
+                            <ul class="text-right space-y-2 text-gray-700">\
+                                <li>\uc0\u55356 \u57215  \u1495 \u1496 \u1497 \u1508 \u1497 \u1501  \u1502 \u1490 \u1493 \u1493 \u1503  \u1512 \u1495 \u1489 </li>\
+                                <li>\uc0\u55358 \u56676  \u1513 \u1514 \u1497 \u1492  \u1511 \u1512 \u1492  \u1502 \u1512 \u1506 \u1504 \u1504 \u1514 </li>\
+                                <li>\uc0\u55356 \u57210  \u1513 \u1514 \u1497 \u1492  \u1495 \u1512 \u1497 \u1508 \u1492  \u1488 \u1497 \u1499 \u1493 \u1514 \u1497 \u1514 </li>\
+                                <li>\uc0\u55357 \u57004  \u1505 \u1497 \u1490 \u1512 \u1497 \u1493 \u1514  \u1493 \u1502 \u1493 \u1514 \u1490 \u1497 \u1501  \u1502 \u1493 \u1489 \u1497 \u1500 \u1497 \u1501 </li>\
+                                <li>\uc0\u55356 \u57224  \u1489 \u1500 \u1493 \u1504 \u1497 \u1501  \u1493 \u1511 \u1497 \u1513 \u1493 \u1496 \u1497 \u1501 </li>\
+                                <li>\uc0\u55356 \u57217  \u1502 \u1488 \u1512 \u1494 \u1497 \u1501  \u1502 \u1497 \u1493 \u1495 \u1491 \u1497 \u1501  \u1500 \u1499 \u1500  \u1488 \u1497 \u1512 \u1493 \u1506 </li>\
+                            </ul>\
+                        </div>\
+                        \
+                        <div class="bg-orange-50 rounded-2xl p-6">\
+                            <h4 class="text-xl font-bold text-orange-600 mb-4">\uc0\u55356 \u57119  \u1502 \u1492  \u1502 \u1497 \u1497 \u1495 \u1491  \u1488 \u1493 \u1514 \u1504 \u1493 </h4>\
+                            <ul class="text-right space-y-2 text-gray-700">\
+                                <li>\uc0\u55356 \u57286  30 \u1513 \u1504 \u1493 \u1514  \u1504 \u1497 \u1505 \u1497 \u1493 \u1503  \u1493 \u1502 \u1511 \u1510 \u1493 \u1506 \u1497 \u1493 \u1514 </li>\
+                                <li>\uc0\u55357 \u56462  \u1502 \u1493 \u1510 \u1512 \u1497 \u1501  \u1488 \u1497 \u1499 \u1493 \u1514 \u1497 \u1497 \u1501  \u1489 \u1500 \u1489 \u1491 </li>\
+                                <li>\uc0\u55357 \u56496  \u1502 \u1495 \u1497 \u1512 \u1497 \u1501  \u1492 \u1493 \u1490 \u1504 \u1497 \u1501  \u1493 \u1492 \u1490 \u1497 \u1493 \u1504 \u1497 \u1497 \u1501 </li>\
+                                <li>\uc0\u55357 \u56842  \u1513 \u1497 \u1512 \u1493 \u1514  \u1489 \u1512 \u1502 \u1492  \u1490 \u1489 \u1493 \u1492 \u1492 </li>\
+                                <li>\uc0\u55357 \u56525  \u1502 \u1497 \u1511 \u1493 \u1501  \u1504 \u1493 \u1495  \u1489 \u1500 \u1489  \u1512 \u1506 \u1504 \u1504 \u1492 </li>\
+                                <li>\uc0\u9889  \u1513 \u1497 \u1512 \u1493 \u1514  \u1502 \u1492 \u1497 \u1512  \u1493 \u1488 \u1502 \u1497 \u1503 </li>\
+                            </ul>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Contact Section -->\
+    <section id="contact" class="py-16 bg-gradient-to-r from-red-600 to-orange-600 text-white">\
+        <div class="container mx-auto px-4">\
+            <h2 class="text-4xl font-bold text-center mb-12">\uc0\u55357 \u56542  \u1510 \u1493 \u1512  \u1511 \u1513 \u1512 </h2>\
+            \
+            <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">\
+                <div class="bg-white/10 rounded-2xl p-8">\
+                    <h3 class="text-2xl font-bold mb-6">\uc0\u55357 \u56525  \u1508 \u1512 \u1496 \u1497  \u1497 \u1510 \u1497 \u1512 \u1514  \u1511 \u1513 \u1512 </h3>\
+                    \
+                    <div class="space-y-6">\
+                        <div class="flex items-center space-x-4 space-x-reverse">\
+                            <div class="bg-white/20 p-3 rounded-full">\uc0\u55357 \u56525 </div>\
+                            <div>\
+                                <h4 class="font-bold text-lg">\uc0\u1499 \u1514 \u1493 \u1489 \u1514 </h4>\
+                                <p>\uc0\u1511 \u1500 \u1488 \u1493 \u1494 \u1504 \u1512  2, \u1512 \u1506 \u1504 \u1504 \u1492 </p>\
+                            </div>\
+                        </div>\
+                        \
+                        <div class="flex items-center space-x-4 space-x-reverse">\
+                            <div class="bg-white/20 p-3 rounded-full">\uc0\u55357 \u56542 </div>\
+                            <div>\
+                                <h4 class="font-bold text-lg">\uc0\u1496 \u1500 \u1508 \u1493 \u1503 </h4>\
+                                <a href="tel:050-821-1254" class="hover:underline">050-821-1254</a>\
+                            </div>\
+                        </div>\
+                        \
+                        <div class="flex items-center space-x-4 space-x-reverse">\
+                            <div class="bg-white/20 p-3 rounded-full">\uc0\u55357 \u56492 </div>\
+                            <div>\
+                                <h4 class="font-bold text-lg">WhatsApp</h4>\
+                                <a href="https://wa.me/972508211254" class="hover:underline">\uc0\u1513 \u1500 \u1495  \u1492 \u1493 \u1491 \u1506 \u1492 </a>\
+                            </div>\
+                        </div>\
+                        \
+                        <div class="flex items-center space-x-4 space-x-reverse">\
+                            <div class="bg-white/20 p-3 rounded-full">\uc0\u55357 \u56656 </div>\
+                            <div>\
+                                <h4 class="font-bold text-lg">\uc0\u1513 \u1506 \u1493 \u1514  \u1508 \u1506 \u1497 \u1500 \u1493 \u1514 </h4>\
+                                <p>\uc0\u1497 \u1493 \u1501 -\u1513 \u1489 \u1514 : 06:00-24:00</p>\
+                            </div>\
+                        </div>\
+                    </div>\
+                    \
+                    <div class="mt-8 flex gap-4">\
+                        <a href="https://waze.com/ul?q=\uc0\u1511 \u1500 \u1488 \u1493 \u1494 \u1504 \u1512  2 \u1512 \u1506 \u1504 \u1504 \u1492 &navigate=yes" target="_blank" \
+                           class="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-bold text-center hover:bg-blue-700 transition-colors">\
+                            \uc0\u55357 \u56826 \u65039  \u1504 \u1493 \u1493 \u1496  \u1489 -Waze\
+                        </a>\
+                        <a href="https://www.google.com/maps/dir//\uc0\u1511 \u1500 \u1488 \u1493 \u1494 \u1504 \u1512 +2,+\u1512 \u1506 \u1504 \u1504 \u1492 " target="_blank" \
+                           class="flex-1 bg-green-600 text-white py-3 px-6 rounded-lg font-bold text-center hover:bg-green-700 transition-colors">\
+                            \uc0\u55357 \u56826 \u65039  Google Maps\
+                        </a>\
+                    </div>\
+                </div>\
+                \
+                <div class="bg-white/10 rounded-2xl p-8">\
+                    <h3 class="text-2xl font-bold mb-6">\uc0\u55357 \u56460  \u1513 \u1500 \u1495  \u1492 \u1493 \u1491 \u1506 \u1492 </h3>\
+                    \
+                    <form class="space-y-6" onsubmit="sendMessage(event)">\
+                        <div>\
+                            <label class="block text-sm font-bold mb-2">\uc0\u1513 \u1501  \u1502 \u1500 \u1488 </label>\
+                            <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900">\
+                        </div>\
+                        \
+                        <div>\
+                            <label class="block text-sm font-bold mb-2">\uc0\u1496 \u1500 \u1508 \u1493 \u1503 </label>\
+                            <input type="tel" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900">\
+                        </div>\
+                        \
+                        <div>\
+                            <label class="block text-sm font-bold mb-2">\uc0\u1492 \u1493 \u1491 \u1506 \u1492 </label>\
+                            <textarea rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900" placeholder="\uc0\u1499 \u1514 \u1489  \u1499 \u1488 \u1503  \u1488 \u1514  \u1492 \u1492 \u1493 \u1491 \u1506 \u1492  \u1513 \u1500 \u1498 ..."></textarea>\
+                        </div>\
+                        \
+                        <button type="submit" class="w-full bg-white text-red-600 py-4 px-6 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">\
+                            \uc0\u55357 \u56548  \u1513 \u1500 \u1495  \u1492 \u1493 \u1491 \u1506 \u1492 \
+                        </button>\
+                    </form>\
+                </div>\
+            </div>\
+        </div>\
+    </section>\
+\
+    <!-- Footer -->\
+    <footer class="bg-gray-900 text-white py-8">\
+        <div class="container mx-auto px-4 text-center">\
+            <h3 class="text-xl font-bold mb-4">\uc0\u55356 \u57322  \u1492 \u1508 \u1497 \u1504 \u1492  \u1513 \u1500  \u1512 \u1493 \u1504 \u1503 </h3>\
+            <p class="mb-2">\uc0\u55357 \u56525  \u1511 \u1500 \u1488 \u1493 \u1494 \u1504 \u1512  2, \u1512 \u1506 \u1504 \u1504 \u1492 </p>\
+            <p class="mb-2">\uc0\u55357 \u56542  050-821-1254</p>\
+            <p class="mb-4">\uc0\u55357 \u56492  <a href="https://wa.me/972508211254" class="text-green-400">WhatsApp</a></p>\
+            <p class="text-gray-400">&copy; 2024 \uc0\u1492 \u1508 \u1497 \u1504 \u1492  \u1513 \u1500  \u1512 \u1493 \u1504 \u1503  - 30 \u1513 \u1504 \u1492  \u1513 \u1500  \u1513 \u1497 \u1512 \u1493 \u1514  \u1502 \u1506 \u1493 \u1500 \u1492 </p>\
+        </div>\
+    </footer>\
+\
+    <script>\
+        // Products Database\
+        const products = [\
+            \{id: 1, name: '\uc0\u1489 \u1502 \u1489 \u1492 ', price: 7, category: '\u1495 \u1496 \u1497 \u1508 \u1497 \u1501 ', image: '\u55358 \u56668 ', description: '\u1495 \u1496 \u1497 \u1507  \u1489 \u1502 \u1489 \u1492  \u1511 \u1500 \u1488 \u1505 \u1497  \u1493 \u1508 \u1512 \u1497 \u1498 '\},\
+            \{id: 2, name: '\uc0\u1513 \u1493 \u1511 \u1493 \u1500 \u1491  \u1502 \u1497 \u1500 \u1511 \u1492 ', price: 15, category: '\u1495 \u1496 \u1497 \u1508 \u1497 \u1501 ', image: '\u55356 \u57195 ', description: '\u1513 \u1493 \u1511 \u1493 \u1500 \u1491  \u1502 \u1497 \u1500 \u1511 \u1492  \u1502 \u1511 \u1493 \u1512 \u1497 '\},\
+            \{id: 3, name: '\uc0\u1506 \u1493 \u1490 \u1497 \u1493 \u1514  \u1488 \u1493 \u1512 \u1488 \u1493 ', price: 12, category: '\u1495 \u1496 \u1497 \u1508 \u1497 \u1501 ', image: '\u55356 \u57194 ', description: '\u1506 \u1493 \u1490 \u1497 \u1493 \u1514  \u1488 \u1493 \u1512 \u1488 \u1493  \u1502 \u1511 \u1493 \u1512 \u1497 \u1493 \u1514 '\},\
+            \{id: 4, name: '\uc0\u1511 \u1493 \u1500 \u1492  \u1511 \u1512 ', price: 8, category: '\u1513 \u1514 \u1497 \u1492  \u1502 \u1514 \u1493 \u1511 \u1492 ', image: '\u55358 \u56676 ', description: '\u1511 \u1493 \u1500 \u1492  \u1511 \u1512 \u1492  \u1493 \u1502 \u1512 \u1506 \u1504 \u1504 \u1514 '\},\
+            \{id: 5, name: '\uc0\u1502 \u1497 \u1509  \u1514 \u1508 \u1493 \u1494 \u1497 \u1501 ', price: 14, category: '\u1513 \u1514 \u1497 \u1492  \u1502 \u1514 \u1493 \u1511 \u1492 ', image: '\u55356 \u57162 ', description: '\u1502 \u1497 \u1509  \u1514 \u1508 \u1493 \u1494 \u1497 \u1501  \u1496 \u1489 \u1506 \u1497 '\},\
+            \{id: 6, name: '\uc0\u1489 \u1497 \u1512 \u1492  \u1490 \u1493 \u1500 \u1491 \u1505 \u1496 \u1488 \u1512 ', price: 18, category: '\u1513 \u1514 \u1497 \u1492  \u1495 \u1512 \u1497 \u1508 \u1492 ', image: '\u55356 \u57210 ', description: '\u1489 \u1497 \u1512 \u1492  \u1490 \u1493 \u1500 \u1491 \u1505 \u1496 \u1488 \u1512  \u1511 \u1512 \u1492 '\},\
+            \{id: 7, name: '\uc0\u1502 \u1512 \u1500 \u1489 \u1493 \u1512 \u1493 ', price: 38, category: '\u1505 \u1497 \u1490 \u1512 \u1497 \u1493 \u1514 ', image: '\u55357 \u57004 ', description: '\u1502 \u1512 \u1500 \u1489 \u1493 \u1512 \u1493  \u1512 \u1491  - \u1511 \u1493 \u1508 \u1505 \u1492 '\},\
+            \{id: 8, name: '\uc0\u1502 \u1488 \u1512 \u1494  \u1497 \u1493 \u1501  \u1492 \u1493 \u1500 \u1491 \u1514 ', price: 85, category: '\u1502 \u1488 \u1512 \u1494 \u1497 \u1501  \u1500 \u1495 \u1490  \u1493 \u1497 \u1502 \u1497  \u1492 \u1493 \u1500 \u1491 \u1514 ', image: '\u55356 \u57217 ', description: '\u1502 \u1488 \u1512 \u1494  \u1497 \u1493 \u1501  \u1492 \u1493 \u1500 \u1491 \u1514  \u1506 \u1501  \u1489 \u1500 \u1493 \u1504 \u1497 \u1501  \u1493 \u1502 \u1502 \u1514 \u1511 \u1497 \u1501 '\},\
+            \{id: 9, name: '\uc0\u1489 \u1500 \u1493 \u1503  \u1492 \u1500 \u1497 \u1493 \u1501 ', price: 8, category: '\u1489 \u1500 \u1493 \u1504 \u1497 \u1501  \u1493 \u1499 \u1493 ', image: '\u55356 \u57224 ', description: '\u1489 \u1500 \u1493 \u1503  \u1492 \u1500 \u1497 \u1493 \u1501  \u1510 \u1489 \u1506 \u1493 \u1504 \u1497 '\},\
+            \{id: 10, name: '\uc0\u1504 \u1512 \u1493 \u1514  \u1497 \u1493 \u1501  \u1492 \u1493 \u1500 \u1491 \u1514 ', price: 15, category: '\u1489 \u1500 \u1493 \u1504 \u1497 \u1501  \u1493 \u1499 \u1493 ', image: '\u55357 \u56687 \u65039 ', description: '\u1505 \u1496  \u1504 \u1512 \u1493 \u1514  \u1497 \u1493 \u1501  \u1492 \u1493 \u1500 \u1491 \u1514 '\}\
+        ];\
+\
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];\
+        let currentCategory = '\uc0\u1492 \u1499 \u1500 ';\
+\
+        // Initialize\
+        document.addEventListener('DOMContentLoaded', function() \{\
+            displayProducts(products);\
+            updateCartUI();\
+        \});\
+\
+        function displayProducts(productsToShow) \{\
+            const grid = document.getElementById('products-grid');\
+            grid.innerHTML = '';\
+\
+            productsToShow.forEach(product => \{\
+                const productCard = document.createElement('div');\
+                productCard.className = 'product-card bg-white rounded-2xl shadow-lg overflow-hidden';\
+                \
+                productCard.innerHTML = `\
+                    <div class="p-6 text-center">\
+                        <div class="text-6xl mb-4">$\{product.image\}</div>\
+                        <h3 class="text-xl font-bold mb-2">$\{product.name\}</h3>\
+                        <p class="text-gray-600 text-sm mb-4">$\{product.description\}</p>\
+                        <div class="flex justify-between items-center mb-4">\
+                            <span class="text-2xl font-bold text-red-600">\uc0\u8362 $\{product.price\}</span>\
+                            <span class="text-xs bg-gray-100 px-2 py-1 rounded-full">$\{product.category\}</span>\
+                        </div>\
+                        <button onclick="addToCart($\{product.id\})" \
+                                class="w-full bg-red-600 text-white py-3 px-6 rounded-xl font-bold hover:bg-red-700 transition-colors">\
+                            \uc0\u55357 \u57042  \u1492 \u1493 \u1505 \u1507  \u1500 \u1506 \u1490 \u1500 \u1492 \
+                        </button>\
+                    </div>\
+                `;\
+                \
+                grid.appendChild(productCard);\
+            \});\
+        \}\
+\
+        function filterByCategory(category) \{\
+            currentCategory = category;\
+            \
+            document.querySelectorAll('.category-btn').forEach(btn => \{\
+                btn.className = 'category-btn px-6 py-3 rounded-full font-medium bg-gray-100 text-gray-700 hover:bg-gray-200';\
+            \});\
+            event.target.className = 'category-btn px-6 py-3 rounded-full font-medium bg-red-600 text-white';\
+            \
+            const filteredProducts = category === '\uc0\u1492 \u1499 \u1500 ' ? products : products.filter(p => p.category === category);\
+            displayProducts(filteredProducts);\
+        \}\
+\
+        function addToCart(productId) \{\
+            const product = products.find(p => p.id === productId);\
+            const existingItem = cart.find(item => item.id === productId);\
+            \
+            if (existingItem) \{\
+                existingItem.quantity += 1;\
+            \} else \{\
+                cart.push(\{ ...product, quantity: 1 \});\
+            \}\
+            \
+            localStorage.setItem('cart', JSON.stringify(cart));\
+            updateCartUI();\
+            showNotification(`$\{product.name\} \uc0\u1504 \u1493 \u1505 \u1507  \u1500 \u1506 \u1490 \u1500 \u1492 ! \u55357 \u57042 `);\
+        \}\
+\
+        function updateCartUI() \{\
+            const cartCount = document.getElementByI\uc0\u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 \u8203 }
